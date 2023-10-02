@@ -6,6 +6,7 @@ const BlogModel = require('../models/blogModel');
 
 const authenticate = function (req, res, next) {
   try {
+    console.log(".........9");
     let token = req.headers['x-api-key'];
     if (!token)
       return res

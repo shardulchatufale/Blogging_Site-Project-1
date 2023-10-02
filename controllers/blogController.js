@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const createBlog = async function (req, res) {
   try {
+    console.log("........9");
     let data = req.body;
 
     if (!data.authorId)
@@ -48,7 +49,7 @@ const createBlog = async function (req, res) {
 const getAllBlogs = async function (req, res) {
   try {
     let data = req.query;
-
+console.log(".....52");
     let filter = { isDeleted: false, isPublished: true };
 
     if (Object.keys(data).length == 0) {
@@ -69,7 +70,7 @@ const getAllBlogs = async function (req, res) {
         { subcategory: data.subcategory },
         { tags: data.tags },
       ];
-
+console.log(".......73");
       let allBlogs = await BlogModel.find(filter);
 
       if (allBlogs.length == 0) {
